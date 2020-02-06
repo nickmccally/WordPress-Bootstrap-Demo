@@ -64,7 +64,12 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 			}
 		}
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-				sprintf('<div><time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s"><small>Last Updated: %4$s </small></time></div>');
+
+			echo sprintf('<div><time class="updated" datetime="%3$s"><small>Last Updated: %4$s </small></time></div>', esc_attr( get_the_date( 'c' ) ),
+				esc_html( get_the_date() ),
+				esc_attr( get_the_modified_date( 'c' ) ),
+				esc_html( get_the_modified_date() )
+			);
 		}
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
