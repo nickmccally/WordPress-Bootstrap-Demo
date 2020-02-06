@@ -16,9 +16,7 @@ defined( 'ABSPATH' ) || exit;
 if ( ! function_exists( 'understrap_posted_on' ) ) {
 	function understrap_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s"><small>Last Updated: %4$s </small></time>';
-		}
+
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
@@ -64,6 +62,9 @@ if ( ! function_exists( 'understrap_entry_footer' ) ) {
 				/* translators: %s: Tags of current post */
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged %s', 'understrap' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
+		}
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<div><time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s"><small>Last Updated: %4$s </small></time></div>';
 		}
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
