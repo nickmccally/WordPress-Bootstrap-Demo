@@ -2095,7 +2095,7 @@ pre {
   .wpcf7 input[type=submit]::placeholder,
   .wpcf7 select::placeholder,
   .wpcf7 textarea::placeholder, .wpcf7 .wpcf7-validation-errors::placeholder {
-    color: #f64c71;
+    color: #6c757d;
     opacity: 1; }
   .form-control:disabled, .wpcf7 input:disabled[type=text],
   .wpcf7 input:disabled[type=search],
