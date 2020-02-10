@@ -28,6 +28,13 @@ defined( 'ABSPATH' ) || exit;
 	<div class="entry-content">
 
 		<?php the_content(); ?>
+		<?php
+
+				if(get_post_type() == 'stock'){
+					set_query_var( 'ticker_symbol', get_field('symbol') );
+					
+				}
+		?>
 
 		<?php
 		wp_link_pages(

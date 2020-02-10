@@ -81,3 +81,25 @@ function currencyFormat($num) {
     }
     return $num;
 }
+
+function wp_register_widgets() {
+	register_sidebar( array(
+		'name' => __( 'Stock Recommendations on Featured Company Page', 'wp' ),
+		'id' => 'widget-stock-recommendations',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widgettitle  mt-3">',
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar( array(
+		'name' => __( 'Related Articles on Featured Company Page', 'wp' ),
+		'id' => 'widget-related-articles',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widgettitle mt-3">',
+		'after_title' => '</h3>'
+	));
+
+}
+add_action( 'widgets_init', 'wp_register_widgets' );
