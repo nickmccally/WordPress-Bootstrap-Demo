@@ -142,7 +142,7 @@ a {
   text-decoration: none;
   background-color: transparent; }
   a:hover {
-    color: #2600e6;
+    color: #2A4390;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -3327,7 +3327,7 @@ fieldset:disabled a.btn {
   color: #2A4390;
   text-decoration: none; }
   .btn-link:hover {
-    color: #2600e6;
+    color: #2A4390;
     text-decoration: underline; }
   .btn-link:focus, .btn-link.focus {
     text-decoration: underline;
@@ -5733,7 +5733,7 @@ input[type="button"].btn-block {
   border: 1px solid #dee2e6; }
   .page-link:hover {
     z-index: 2;
-    color: #2600e6;
+    color: #2A4390;
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6; }
@@ -10152,7 +10152,7 @@ button.bg-dark:focus {
   color: #2A4390 !important; }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #2600e6 !important; }
+  color: #2A4390 !important; }
 
 .text-secondary {
   color: #E63946 !important; }

@@ -14,10 +14,22 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
+			$tickerSymbol = "";
+			$exchange = strtoupper(get_field( "exchange" ));
+			$symbol = strtoupper(get_field( "symbol" ));
+
+			if($exchange)
+				$tickerSymbol .= "{$exchange}:";
+			if($symbol)
+				$tickerSymbol .= "{$symbol}";
+
+			if(!empty($tickerSymbol))
+					$tickerSymbol  = " <small>({$tickerSymbol})</small>";
+
+			the_title(
+				sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+				"{$tickerSymbol}</a></h2>"
+			);
 		?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
